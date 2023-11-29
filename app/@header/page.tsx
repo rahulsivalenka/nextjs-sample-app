@@ -1,9 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function HeaderPage() {
   return (
     <header className="sticky top-0 left-0 bg-header">
       <div className="h-header bg-header px-6 py-2 flex items-center gap-2 2xl:container 2xl:mx-auto">
+        <Image src="/logo.svg" width="48" height="48" alt="Logo" />
         <h1 className="font-medium text-lg">Sample App</h1>
 
         <div className="ml-auto" />
