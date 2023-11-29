@@ -8,13 +8,11 @@ export default function HomeLayout({
   list: React.ReactNode;
 }) {
   return (
-    <div className="p-6">
+    <div className="p-6 2xl:container 2xl:mx-auto">
       <h3 className="text-xl font-bold mb-6">Posts</h3>
       <div className="flex flex-row gap-4">
-        <aside className="w-52 bg-white shadow-md p-2">{filters}</aside>
-        <main className="flex-1 grid grid-flow-row grid-cols-3 gap-4">
-          {list}
-        </main>
+        <aside className="w-60 bg-white shadow-md p-2">{filters}</aside>
+        <main className="flex-1 grid grid-cols-fluid gap-4">{list}</main>
       </div>
     </div>
   );

@@ -7,9 +7,15 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       height: {
         header: '4rem',
+      },
+      gridTemplateColumns: {
+        fluid: 'repeat(auto-fit, minmax(20rem, 1fr))',
       },
       colors: {
         header: 'rgb(var(--header-background-color))',
