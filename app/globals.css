@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Palette: https://colorhunt.co/palette/ffd4b2fff6bdceedc786c8bc */
+:root {
+  --foreground-color: 0, 0, 0;
+  /* --background: 255, 218, 185; */
+  /* --background: 248, 255, 210; */
+  --primary-color: 134, 200, 188;
+  --accent-color: 255, 212, 178;
+
+  --primary-text-color: 0, 0, 0;
+  --accent-text-color: 0, 0, 0;
+
+  --background-color: 255, 246, 189;
+  --background-alpha: 0.5;
+  /* --header-background: 223, 130, 108; */
+  --header-background-color: var(--primary-color);
+}
+
+body {
+  color: rgb(var(--foreground-color));
+  background: rgba(var(--background-color), var(--background-alpha));
+}
