@@ -7,3 +7,11 @@ export async function getPosts() {
 
   return response.json() as unknown as Post[]
 }
+
+export async function getPostById(id: number) {
+  const response = await fetch(
+    'https://jsonplaceholder.typicode.com/posts/' + id
+  )
+
+  return response.json() as unknown as Post
+}

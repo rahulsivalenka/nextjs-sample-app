@@ -4,8 +4,17 @@ import PageLayout from '@/components/PageLayout'
 
 type PostPageLayoutProps = {
   children: React.ReactNode
+  comments: React.ReactNode
 }
 
-export default function PostPageLayout({ children }: PostPageLayoutProps) {
-  return <PageLayout>{children}</PageLayout>
+export default function PostPageLayout({
+  children,
+  comments,
+}: PostPageLayoutProps) {
+  return (
+    <PageLayout>
+      {children}
+      {comments}
+    </PageLayout>
+  )
 }

@@ -1,3 +1,4 @@
+import { getPostById } from '@/services/posts'
 import React from 'react'
 
 type PostPageProps = {
@@ -6,6 +7,12 @@ type PostPageProps = {
   }
 }
 
-export default function PostPage({ params: { id } }: PostPageProps) {
-  return <div>Post Page: {id}</div>
+export default async function PostPage({ params: { id } }: PostPageProps) {
+  const post = await getPostById(Number(id))
+  return (
+    <div>
+      Post Page
+      <pre>{JSON.stringify(post, null, 2)}</pre>
+    </div>
+  )
 }

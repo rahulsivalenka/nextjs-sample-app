@@ -16,6 +16,14 @@ export type User = {
   }
 }
 
+export type Comment = {
+  id: number
+  postId: number
+  name: string
+  email: string
+  body: string
+}
+
 export type Option = {
   label: string
   value: string
