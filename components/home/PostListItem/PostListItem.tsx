@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import { Post } from '@/types'
 import { fetchUser } from '@/services/users'
@@ -22,9 +23,11 @@ export default function PostListItem({
       <p className="p-2">{body}</p>
       <div className="p-2 flex items-center">
         <p className="text-gray-500 text-sm">By {user.name}</p>
-        <Button className="ml-auto" variant="accent" size="xs">
-          View Details
-        </Button>
+        <Link className="ml-auto" href={`/post/${id}`} passHref>
+          <Button variant="accent" size="xs">
+            View Details
+          </Button>
+        </Link>
 
         {/* px-3 py-1 font-semibold text-xs bg-accent text-accent-text rounded-full shadow-sm hover:shadow-md active:shadow-none */}
       </div>
