@@ -3,6 +3,7 @@ import { ResolvingMetadata } from 'next/types'
 
 import PageLayout from '@/components/PageLayout'
 import { getPostById } from '@/services/posts'
+import { fetchUser } from '@/services/users'
 
 const TRIM_LENGTH = 20
 
@@ -49,9 +50,10 @@ export default async function PostPageLayout({
   params: { id },
 }: PostPageLayoutProps) {
   const post = await getPostById(Number(id))
+  const user = await fetchUser(post.userId)
 
   return (
-    <PageLayout heading={post.title}>
+    <PageLayout heading={post.title} subheading={`By ${user.name}`}>
       <div className="flex space-x-8">
         <main className="w-3/5">{children}</main>
         <aside className="w-2/5 bg-white shadow-md rounded-md p-4">
