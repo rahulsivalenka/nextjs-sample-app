@@ -44,6 +44,8 @@ export default function ComboBox({
     Option['value'][] | Option['value']
   >('')
 
+  const buttonRef = React.useRef<HTMLButtonElement>(null)
+
   const isControlled = value !== undefined && onChange != undefined
   value = isControlled ? value : localValue
   const setValue = isControlled ? onChange : setLocalValue
@@ -105,6 +107,7 @@ export default function ComboBox({
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
+            ref={buttonRef}
             variant="outline"
             role="combobox"
             aria-expanded={open}
@@ -114,7 +117,12 @@ export default function ComboBox({
             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[208px] p-0">
+        <PopoverContent
+          className="p-0"
+          style={{
+            width: buttonRef.current?.offsetWidth,
+          }}
+        >
           <Command filter={customFilter}>
             <CommandInput placeholder={searchPlaceholder || 'Search...'} />
             <CommandEmpty>{emptyMessage || 'No record found.'}</CommandEmpty>
