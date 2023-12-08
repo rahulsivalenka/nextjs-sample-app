@@ -15,8 +15,8 @@ const labelVariants = cva(
         full: 'w-full block',
       },
       marginBottom: {
-        default: '',
-        sm: 'mb-1',
+        default: 'mb-1',
+        sm: 'mb-2',
       },
     },
     defaultVariants: {
