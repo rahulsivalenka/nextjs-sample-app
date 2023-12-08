@@ -15,7 +15,10 @@ export default async function CommentsPage({
   return (
     <>
       {comments.map((comment) => (
-        <li key={comment.id}>{comment.body}</li>
+        <article className="p-4" key={comment.id}>
+          <h4 className="font-medium">{comment.name}</h4>
+          <p className="text-gray-500">{comment.body}</p>
+        </article>
       ))}
     </>
   )

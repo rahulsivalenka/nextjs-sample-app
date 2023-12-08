@@ -7,8 +7,8 @@ export default function CommentsLayout({
 }) {
   return (
     <>
-      <h2>Comments</h2>
-      <ul>{children}</ul>
+      <h3 className="text-lg font-semibold mb-1">Comments</h3>
+      <section className="divide-y">{children}</section>
     </>
   )
 }

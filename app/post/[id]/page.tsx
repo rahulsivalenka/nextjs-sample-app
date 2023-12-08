@@ -9,10 +9,5 @@ type PostPageProps = {
 
 export default async function PostPage({ params: { id } }: PostPageProps) {
   const post = await getPostById(Number(id))
-  return (
-    <div>
-      Post Page
-      <pre>{JSON.stringify(post, null, 2)}</pre>
-    </div>
-  )
+  return <p>{post.body}</p>
 }
