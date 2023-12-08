@@ -13,7 +13,7 @@ function PageLayout({ children, heading, subheading }: PageLayoutProps) {
       {Boolean(heading) && (
         <h2
           className={cn(
-            'text-xl font-bold',
+            'text-2xl font-bold',
             Boolean(subheading) ? 'mb-2' : 'mb-6'
           )}
         >

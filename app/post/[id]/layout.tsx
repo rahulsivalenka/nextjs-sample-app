@@ -54,9 +54,9 @@ export default async function PostPageLayout({
 
   return (
     <PageLayout heading={post.title} subheading={`By ${user.name}`}>
-      <div className="flex space-x-8">
+      <div className="flex space-x-8 shadow-md bg-white p-6 rounded-md">
         <main className="w-3/5">{children}</main>
-        <aside className="w-2/5 bg-white shadow-md rounded-md p-4">
+        <aside className="w-2/5 bg-neutral-100 rounded-md p-4">
           {comments}
         </aside>
       </div>
